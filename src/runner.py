@@ -103,6 +103,6 @@ async def run_full_suite(models: List[str], items: List[BenchmarkItem]) -> Dict[
         ])
         
     headers = ["Model", "Accuracy", "P50 Latency", "P99 Latency", "Cost/1k Decisions", "ECE Calibration", "In Tokens", "Out Tokens"]
-    print("\n" + tabulate(table_data, headers=headers, tablefmt="fancy_grid"))
+    print("\n" + tabulate(table_data, headers=headers, tablefmt="grid"))
     
     return summary

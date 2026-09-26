@@ -5,6 +5,14 @@ Main entry point for running the Jev vs. Frontier LLMs & Open Source benchmark.
 import asyncio
 import argparse
 import sys
+import os
+
+# Ensure UTF-8 output encoding for Windows terminals
+if sys.stdout.encoding != 'utf-8':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
 from src.datasets.benchmark_datasets import load_all_datasets
 from src.runner import run_full_suite
 
