@@ -3,7 +3,12 @@ Visualization script for generating publication-quality figures (300 DPI)
 for the Jev vs. Frontier LLMs Research Paper.
 """
 
+import sys
 import os
+
+# Add project root to sys.path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import sqlite3
 import pandas as pd
 import numpy as np
