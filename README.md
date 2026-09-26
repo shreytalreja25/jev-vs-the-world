@@ -1,6 +1,7 @@
 # Jev vs. The World: Tokenomics & Performance Benchmark Suite
 
-[![Research Paper](https://img.shields.io/badge/Research_Paper-Markdown_%26_LaTeX-blue)](paper/research_paper.md)
+[![Research Paper PDF](https://img.shields.io/badge/Research_Paper-PDF-red)](paper/research_paper.pdf)
+[![Research Paper Markdown](https://img.shields.io/badge/Research_Paper-Markdown-blue)](paper/research_paper.md)
 [![GitHub Repository](https://img.shields.io/badge/GitHub-shreytalreja25%2Fjev--vs--the--world-black)](https://github.com/shreytalreja25/jev-vs-the-world.git)
 
 An empirical benchmark suite and research paper comparing **Jev (TypeSafe AI's System-One non-generative decision model)** against frontier Large Language Models (**GPT-4o**, **GPT-4o-mini**) and open-source models (**Llama 3.1 8B**, **Llama 3.2 1B** via Ollama).
