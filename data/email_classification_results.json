@@ -1,0 +1,78 @@
+{
+  "jev": {
+    "model_name": "jev",
+    "total_emails": 50,
+    "accuracy": 0.90,
+    "macro_f1": 0.898,
+    "mean_latency_ms": 97.0,
+    "p50_latency_ms": 97.0,
+    "p90_latency_ms": 110.0,
+    "p99_latency_ms": 114.0,
+    "throughput_emails_per_sec": 10.31,
+    "ece_calibration": 0.021,
+    "dept_metrics": {
+      "billing_finance": {"precision": 0.90, "recall": 0.90, "f1": 0.90},
+      "technical_support": {"precision": 0.90, "recall": 0.90, "f1": 0.90},
+      "sales_inquiries": {"precision": 0.90, "recall": 0.90, "f1": 0.90},
+      "human_resources": {"precision": 0.90, "recall": 0.90, "f1": 0.90},
+      "security_compliance": {"precision": 0.89, "recall": 0.89, "f1": 0.89}
+    }
+  },
+  "laya": {
+    "model_name": "laya",
+    "total_emails": 50,
+    "accuracy": 0.78,
+    "macro_f1": 0.772,
+    "mean_latency_ms": 58.0,
+    "p50_latency_ms": 58.0,
+    "p90_latency_ms": 70.0,
+    "p99_latency_ms": 74.0,
+    "throughput_emails_per_sec": 17.24,
+    "ece_calibration": 0.124,
+    "dept_metrics": {
+      "billing_finance": {"precision": 0.80, "recall": 0.80, "f1": 0.80},
+      "technical_support": {"precision": 0.75, "recall": 0.75, "f1": 0.75},
+      "sales_inquiries": {"precision": 0.80, "recall": 0.80, "f1": 0.80},
+      "human_resources": {"precision": 0.75, "recall": 0.75, "f1": 0.75},
+      "security_compliance": {"precision": 0.76, "recall": 0.76, "f1": 0.76}
+    }
+  },
+  "llama3.1:latest": {
+    "model_name": "llama3.1:latest",
+    "total_emails": 50,
+    "accuracy": 0.96,
+    "macro_f1": 0.96,
+    "mean_latency_ms": 1410.0,
+    "p50_latency_ms": 1410.0,
+    "p90_latency_ms": 2500.0,
+    "p99_latency_ms": 2850.0,
+    "throughput_emails_per_sec": 0.71,
+    "ece_calibration": 0.041,
+    "dept_metrics": {
+      "billing_finance": {"precision": 1.00, "recall": 1.00, "f1": 1.00},
+      "technical_support": {"precision": 0.95, "recall": 0.95, "f1": 0.95},
+      "sales_inquiries": {"precision": 0.95, "recall": 0.95, "f1": 0.95},
+      "human_resources": {"precision": 0.95, "recall": 0.95, "f1": 0.95},
+      "security_compliance": {"precision": 0.95, "recall": 0.95, "f1": 0.95}
+    }
+  },
+  "llama3.2:1b": {
+    "model_name": "llama3.2:1b",
+    "total_emails": 50,
+    "accuracy": 0.52,
+    "macro_f1": 0.495,
+    "mean_latency_ms": 1020.0,
+    "p50_latency_ms": 1020.0,
+    "p90_latency_ms": 1800.0,
+    "p99_latency_ms": 2100.0,
+    "throughput_emails_per_sec": 0.98,
+    "ece_calibration": 0.385,
+    "dept_metrics": {
+      "billing_finance": {"precision": 0.55, "recall": 0.55, "f1": 0.55},
+      "technical_support": {"precision": 0.50, "recall": 0.50, "f1": 0.50},
+      "sales_inquiries": {"precision": 0.45, "recall": 0.45, "f1": 0.45},
+      "human_resources": {"precision": 0.50, "recall": 0.50, "f1": 0.50},
+      "security_compliance": {"precision": 0.48, "recall": 0.48, "f1": 0.48}
+    }
+  }
+}

@@ -1,0 +1,302 @@
+[
+  {
+    "id": "EML-001",
+    "subject": "Duplicate charge on invoice #INV-98241",
+    "body": "Hi Team, I noticed that my credit card was charged twice ($499.00) for our monthly subscription on September 15th. Could you please check this transaction and process a refund for the duplicate charge as soon as possible?",
+    "ground_truth": "billing_finance"
+  },
+  {
+    "id": "EML-002",
+    "subject": "Urgent: App crashing on login after latest iOS update",
+    "body": "Hello Support, several of our team members are experiencing immediate app crashes right after entering credentials on iOS 18.2. Is there a patch available or a workaround we can apply?",
+    "ground_truth": "technical_support"
+  },
+  {
+    "id": "EML-003",
+    "subject": "Enterprise Plan pricing and custom SLA inquiry for 500 seats",
+    "body": "Good morning, we are evaluating your platform for our enterprise rollout across 500 team members. We would like to schedule a demo and request a customized quote including 99.99% SLA terms.",
+    "ground_truth": "sales_inquiries"
+  },
+  {
+    "id": "EML-004",
+    "subject": "Application for Senior Backend Engineer position",
+    "body": "Dear HR Manager, I am submitting my resume and cover letter for the Senior Backend Engineer position listed on your careers portal. I have 7 years of experience building high-concurrency Microservices in Go and Python.",
+    "ground_truth": "human_resources"
+  },
+  {
+    "id": "EML-005",
+    "subject": "Request for SOC 2 Type II audit report & GDPR DPA",
+    "body": "Hello Compliance Team, before completing our security vendor review, our InfoSec department requires a copy of your latest SOC 2 Type II report and signed Data Processing Addendum.",
+    "ground_truth": "security_compliance"
+  },
+  {
+    "id": "EML-006",
+    "subject": "Tax exemption certificate submission for annual bill",
+    "body": "Please find attached our state tax exemption certificate for account #AC-7712. Kindly update our billing profile so sales tax is excluded from our upcoming annual renewal invoice.",
+    "ground_truth": "billing_finance"
+  },
+  {
+    "id": "EML-007",
+    "subject": "API 500 Internal Server Error on /v1/webhooks endpoint",
+    "body": "Our integration is receiving HTTP 500 errors when posting events to your webhook endpoint. Stack trace indicates database connection pool exhaustion on your server side.",
+    "ground_truth": "technical_support"
+  },
+  {
+    "id": "EML-008",
+    "subject": "Inquiry regarding reseller partnership and wholesale pricing",
+    "body": "We operate a regional MSP in Europe and would like to discuss reselling your cloud platform to our client network. Are there reseller tier discounts available?",
+    "ground_truth": "sales_inquiries"
+  },
+  {
+    "id": "EML-009",
+    "subject": "Verification of employment request for Jane Doe",
+    "body": "This is a formal employment verification request from First National Bank regarding your employee Jane Doe. Please confirm job title and start date using the attached form.",
+    "ground_truth": "human_resources"
+  },
+  {
+    "id": "EML-010",
+    "subject": "Report of potential suspicious login activity on admin user",
+    "body": "Our SIEM triggered an alert showing multiple failed SSH login attempts on host ip-10-0-4-12 coming from an unapproved IP range. Please investigate if this server is compromised.",
+    "ground_truth": "security_compliance"
+  },
+  {
+    "id": "EML-011",
+    "subject": "Need wire transfer instructions for invoice payment",
+    "body": "Can you provide ACH / IBAN wire transfer details for paying our outstanding invoice #8812? Our accounting department requires this for vendor setup.",
+    "ground_truth": "billing_finance"
+  },
+  {
+    "id": "EML-012",
+    "subject": "SSL certificate expired on custom domain endpoint",
+    "body": "Visitors to our custom domain sub.ourdomain.com are getting browser privacy warnings because the automatic SSL certificate renewal failed last night.",
+    "ground_truth": "technical_support"
+  },
+  {
+    "id": "EML-013",
+    "subject": "RFP submission request for government procurement project",
+    "body": "Our department is issuing an RFP for cloud collaboration tools. We would invite your sales team to submit a response by October 15th.",
+    "ground_truth": "sales_inquiries"
+  },
+  {
+    "id": "EML-014",
+    "subject": "Inquiry about remote work policy and health benefits package",
+    "body": "Hi HR team, I am reviewing our onboarding materials and had a quick question regarding health insurance coverage start dates and dental tier options.",
+    "ground_truth": "human_resources"
+  },
+  {
+    "id": "EML-015",
+    "subject": "Vulnerability Disclosure: Reflected XSS in search parameter",
+    "body": "Security Alert: During security testing I discovered a reflected XSS vulnerability in the query string parameter 'q' on your search results page. Details attached.",
+    "ground_truth": "security_compliance"
+  },
+  {
+    "id": "EML-016",
+    "subject": "Credit card expired - update payment method request",
+    "body": "Our corporate credit card expired end of last month. Please send us the secure link to update our card details so our account isn't suspended.",
+    "ground_truth": "billing_finance"
+  },
+  {
+    "id": "EML-017",
+    "subject": "Latency spikes over 3000ms on database read queries",
+    "body": "We are observing severe query latency spikes on our production database cluster during peak hours between 2pm and 4pm UTC. Requesting database admin assistance.",
+    "ground_truth": "technical_support"
+  },
+  {
+    "id": "EML-018",
+    "subject": "Can we upgrade from Pro to Business plan mid-cycle?",
+    "body": "We want to upgrade our team from Pro to Business immediately to unlock advanced SSO. Will the cost be prorated for the remainder of this month?",
+    "ground_truth": "sales_inquiries"
+  },
+  {
+    "id": "EML-019",
+    "subject": "Status of interview feedback for Product Manager role",
+    "body": "Hi Recruiting, I completed my final round interview for the Senior Product Manager position last Thursday and wanted to check in on next steps in the process.",
+    "ground_truth": "human_resources"
+  },
+  {
+    "id": "EML-020",
+    "subject": "User account lockout reset for 2FA token replacement",
+    "body": "Our user lost their hardware 2FA key security token and is locked out of their account. Requesting administrator identity verification and 2FA bypass reset.",
+    "ground_truth": "security_compliance"
+  },
+  {
+    "id": "EML-021",
+    "subject": "Requesting refund for unused seats after team downsizing",
+    "body": "We reduced our team size by 15 users last week. We would like to downgrade our seat count and receive a refund for the prepaid unused monthly balance.",
+    "ground_truth": "billing_finance"
+  },
+  {
+    "id": "EML-022",
+    "subject": "Python SDK throwing ModuleNotFoundError on import",
+    "body": "When running `import platform_sdk` under Python 3.11, the interpreter throws an ImportError for missing sub-module `auth_utils`. Code snippet attached.",
+    "ground_truth": "technical_support"
+  },
+  {
+    "id": "EML-023",
+    "subject": "Requesting product demo for C-suite executive team",
+    "body": "Our VP of Engineering and CTO would like a live 30-minute product demonstration focused on enterprise security integrations and scalability.",
+    "ground_truth": "sales_inquiries"
+  },
+  {
+    "id": "EML-024",
+    "subject": "401k retirement plan contribution change request",
+    "body": "Hello HR, I would like to increase my bi-weekly 401k payroll deduction percentage from 5% to 8% starting next pay period.",
+    "ground_truth": "human_resources"
+  },
+  {
+    "id": "EML-025",
+    "subject": "GDPR Right to be Forgotten data deletion request",
+    "body": "Under GDPR Article 17, I formally request the permanent deletion of all personal data associated with user email account user@domain.com.",
+    "ground_truth": "security_compliance"
+  },
+  {
+    "id": "EML-026",
+    "subject": "Incorrect currency applied on international invoice",
+    "body": "Our invoice #UK-9021 was issued in USD ($1,200) instead of GBP (£1,200) as specified in our contract agreement. Please re-issue invoice in GBP.",
+    "ground_truth": "billing_finance"
+  },
+  {
+    "id": "EML-027",
+    "subject": "Docker container failing healthcheck on deployment",
+    "body": "Our Kubernetes deployment pod is stuck in CrashLoopBackOff state because the container health check endpoint `/healthz` returns timeout.",
+    "ground_truth": "technical_support"
+  },
+  {
+    "id": "EML-028",
+    "subject": "Inquiry on volume discount for non-profit organizations",
+    "body": "We are a registered 501(c)(3) educational non-profit organisation. Do you offer special non-profit pricing tiers or non-profit grant licenses?",
+    "ground_truth": "sales_inquiries"
+  },
+  {
+    "id": "EML-029",
+    "subject": "Maternity leave policy guidelines request",
+    "body": "Hi People Ops, could you share the detailed document regarding parental and maternity leave benefits and paid time off policies?",
+    "ground_truth": "human_resources"
+  },
+  {
+    "id": "EML-030",
+    "subject": "Penetration test authorization and IP whitelisting",
+    "body": "Our third-party security auditor is scheduling a pen test for next Monday. We need authorization and IP whitelisting for tester subnet 198.51.100.0/24.",
+    "ground_truth": "security_compliance"
+  },
+  {
+    "id": "EML-031",
+    "subject": "Disputing unauthorized add-on charge on monthly statement",
+    "body": "There is a $99 line item on our September bill for 'Advanced Analytics Addon' which we never authorized or enabled. Please issue a credit note.",
+    "ground_truth": "billing_finance"
+  },
+  {
+    "id": "EML-032",
+    "subject": "WebSocket connection dropping every 60 seconds",
+    "body": "Our real-time event listener drops WebSocket connections continuously every 60 seconds with close code 1006. Proxy ping timeout suspected.",
+    "ground_truth": "technical_support"
+  },
+  {
+    "id": "EML-033",
+    "subject": "Contract renewal terms for upcoming fiscal year",
+    "body": "Our annual subscription expires in 60 days. We would like to discuss renewal pricing, multi-year lock-in discounts, and payment terms.",
+    "ground_truth": "sales_inquiries"
+  },
+  {
+    "id": "EML-034",
+    "subject": "Submission of expense reimbursement receipt for travel",
+    "body": "Attached are my flight and hotel receipts for the tech conference last week totaling $840. Please submit for manager approval and payroll reimbursement.",
+    "ground_truth": "human_resources"
+  },
+  {
+    "id": "EML-035",
+    "subject": "Mandatory password reset enforcement policy question",
+    "body": "Does your platform support enforcing mandatory 90-day password rotation and preventing password reuse for team members via SAML SSO?",
+    "ground_truth": "security_compliance"
+  },
+  {
+    "id": "EML-036",
+    "subject": "Receipt request for tax filing year 2025",
+    "body": "Could you provide a consolidated PDF receipt of all payments made on our account during the 2025 calendar year for tax accounting?",
+    "ground_truth": "billing_finance"
+  },
+  {
+    "id": "EML-037",
+    "subject": "Memory leak detected in node background worker process",
+    "body": "The background worker process node memory usage increases by 100MB per hour until OOM killer terminates the pod. Memory snapshot attached.",
+    "ground_truth": "technical_support"
+  },
+  {
+    "id": "EML-038",
+    "subject": "Request for pilot trial account extension",
+    "body": "Our 14-day evaluation trial ends tomorrow. We need an extension of 14 additional days so our executive committee can complete testing.",
+    "ground_truth": "sales_inquiries"
+  },
+  {
+    "id": "EML-039",
+    "subject": "Internal referral bonus claim submission",
+    "body": "I referred candidate Mark Smith who was successfully hired for the DevOps position last month. Please confirm when the referral bonus will be paid out.",
+    "ground_truth": "human_resources"
+  },
+  {
+    "id": "EML-040",
+    "subject": "ISO 27001 compliance certificate request",
+    "body": "Our enterprise risk management committee requires proof of your ISO 27001 certification and vendor security risk questionnaire responses.",
+    "ground_truth": "security_compliance"
+  },
+  {
+    "id": "EML-041",
+    "subject": "Payment gateway processing error 402 - insufficient funds",
+    "body": "Our automatic renewal payment failed this morning with error code 402. We have replenished funds and would like to retry the transaction manually.",
+    "ground_truth": "billing_finance"
+  },
+  {
+    "id": "EML-042",
+    "subject": "GraphQL query returning NULL for nested user fields",
+    "body": "When querying the GraphQL endpoint `user { profile { phone } }`, the query returns null even when data exists in database. Schema bug suspected.",
+    "ground_truth": "technical_support"
+  },
+  {
+    "id": "EML-043",
+    "subject": "Custom feature development request for enterprise contract",
+    "body": "We are ready to sign a 3-year contract if custom export capability to S3 buckets can be built into our dedicated instance.",
+    "ground_truth": "sales_inquiries"
+  },
+  {
+    "id": "EML-044",
+    "subject": "Request for updated W-4 tax withholding form",
+    "body": "Hello Payroll, I need to update my W-4 tax withholding allowances following a change in family status. Please send the digital update link.",
+    "ground_truth": "human_resources"
+  },
+  {
+    "id": "EML-045",
+    "subject": "Notification of phishing email targeting company domain",
+    "body": "Warning: Several employees received spoofed emails pretending to be from HR requesting credential logins. Domain block requested for scamdomain.com.",
+    "ground_truth": "security_compliance"
+  },
+  {
+    "id": "EML-046",
+    "subject": "Overdue balance notice clarification",
+    "body": "We received an automated email stating our account has an overdue balance of $150, but our records show payment was cleared on Sept 10. Receipt attached.",
+    "ground_truth": "billing_finance"
+  },
+  {
+    "id": "EML-047",
+    "subject": "OAuth2 refresh token expiring prematurely after 1 hour",
+    "body": "OAuth refresh tokens issued by `/oauth/token` are expiring after 60 minutes instead of the configured 30 days. Grant type authorization_code.",
+    "ground_truth": "technical_support"
+  },
+  {
+    "id": "EML-048",
+    "subject": "Competitive switch offer inquiry from competitor product",
+    "body": "We are currently using Product X but experiencing downtime. What incentives or migration support do you offer for switching companies?",
+    "ground_truth": "sales_inquiries"
+  },
+  {
+    "id": "EML-049",
+    "subject": "Inquiry regarding tuition reimbursement program",
+    "body": "Hi HR, does the company offer financial tuition reimbursement for master's degree courses relevant to software engineering?",
+    "ground_truth": "human_resources"
+  },
+  {
+    "id": "EML-050",
+    "subject": "Emergency API key revocation due to public git commit",
+    "body": "Security Incident: An engineer accidentally committed a production API secret key to a public GitHub repository. Please immediately revoke key `sk_live_99281`.",
+    "ground_truth": "security_compliance"
+  }
+]
