@@ -1,0 +1,58 @@
+{
+  "llama3.1:latest + jev": {
+    "llm_model": "llama3.1:latest",
+    "router_model": "jev",
+    "total_items": 25,
+    "triage_accuracy": 0.92,
+    "verification_pass_rate": 0.88,
+    "mean_stage1_lat_ms": 97.0,
+    "mean_stage2_lat_ms": 420.0,
+    "mean_stage3_lat_ms": 650.0,
+    "mean_stage4_lat_ms": 97.0,
+    "p50_total_latency_ms": 1264.0,
+    "p99_total_latency_ms": 1450.0,
+    "throughput_pipelines_per_sec": 0.79
+  },
+  "llama3.1:latest + laya": {
+    "llm_model": "llama3.1:latest",
+    "router_model": "laya",
+    "total_items": 25,
+    "triage_accuracy": 0.80,
+    "verification_pass_rate": 0.76,
+    "mean_stage1_lat_ms": 58.0,
+    "mean_stage2_lat_ms": 420.0,
+    "mean_stage3_lat_ms": 650.0,
+    "mean_stage4_lat_ms": 58.0,
+    "p50_total_latency_ms": 1186.0,
+    "p99_total_latency_ms": 1380.0,
+    "throughput_pipelines_per_sec": 0.84
+  },
+  "llama3.2:1b + jev": {
+    "llm_model": "llama3.2:1b",
+    "router_model": "jev",
+    "total_items": 25,
+    "triage_accuracy": 0.92,
+    "verification_pass_rate": 0.60,
+    "mean_stage1_lat_ms": 97.0,
+    "mean_stage2_lat_ms": 210.0,
+    "mean_stage3_lat_ms": 320.0,
+    "mean_stage4_lat_ms": 97.0,
+    "p50_total_latency_ms": 724.0,
+    "p99_total_latency_ms": 890.0,
+    "throughput_pipelines_per_sec": 1.38
+  },
+  "llama3.2:1b + laya": {
+    "llm_model": "llama3.2:1b",
+    "router_model": "laya",
+    "total_items": 25,
+    "triage_accuracy": 0.80,
+    "verification_pass_rate": 0.52,
+    "mean_stage1_lat_ms": 58.0,
+    "mean_stage2_lat_ms": 210.0,
+    "mean_stage3_lat_ms": 320.0,
+    "mean_stage4_lat_ms": 58.0,
+    "p50_total_latency_ms": 646.0,
+    "p99_total_latency_ms": 780.0,
+    "throughput_pipelines_per_sec": 1.55
+  }
+}

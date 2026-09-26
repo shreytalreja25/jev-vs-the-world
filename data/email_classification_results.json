@@ -2,77 +2,157 @@
   "jev": {
     "model_name": "jev",
     "total_emails": 50,
-    "accuracy": 0.90,
-    "macro_f1": 0.898,
-    "mean_latency_ms": 97.0,
-    "p50_latency_ms": 97.0,
-    "p90_latency_ms": 110.0,
-    "p99_latency_ms": 114.0,
-    "throughput_emails_per_sec": 10.31,
-    "ece_calibration": 0.021,
+    "accuracy": 0.9,
+    "macro_f1": 0.95311004784689,
+    "mean_latency_ms": 100.78,
+    "p50_latency_ms": 100.0,
+    "p90_latency_ms": 109.0,
+    "p99_latency_ms": 113.50999999999999,
+    "throughput_emails_per_sec": 9.922603691208574,
+    "ece_calibration": 0.02180000000000002,
     "dept_metrics": {
-      "billing_finance": {"precision": 0.90, "recall": 0.90, "f1": 0.90},
-      "technical_support": {"precision": 0.90, "recall": 0.90, "f1": 0.90},
-      "sales_inquiries": {"precision": 0.90, "recall": 0.90, "f1": 0.90},
-      "human_resources": {"precision": 0.90, "recall": 0.90, "f1": 0.90},
-      "security_compliance": {"precision": 0.89, "recall": 0.89, "f1": 0.89}
+      "billing_finance": {
+        "precision": 0.6923076923076923,
+        "recall": 1.0,
+        "f1": 0.8181818181818181
+      },
+      "technical_support": {
+        "precision": 0.9,
+        "recall": 1.0,
+        "f1": 0.9473684210526316
+      },
+      "sales_inquiries": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "human_resources": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "security_compliance": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
     }
   },
   "laya": {
     "model_name": "laya",
     "total_emails": 50,
-    "accuracy": 0.78,
-    "macro_f1": 0.772,
-    "mean_latency_ms": 58.0,
-    "p50_latency_ms": 58.0,
-    "p90_latency_ms": 70.0,
-    "p99_latency_ms": 74.0,
-    "throughput_emails_per_sec": 17.24,
-    "ece_calibration": 0.124,
+    "accuracy": 0.8,
+    "macro_f1": 0.9179487179487179,
+    "mean_latency_ms": 59.48,
+    "p50_latency_ms": 59.0,
+    "p90_latency_ms": 69.1,
+    "p99_latency_ms": 72.0,
+    "throughput_emails_per_sec": 16.812373907195695,
+    "ece_calibration": 0.2999999999999999,
     "dept_metrics": {
-      "billing_finance": {"precision": 0.80, "recall": 0.80, "f1": 0.80},
-      "technical_support": {"precision": 0.75, "recall": 0.75, "f1": 0.75},
-      "sales_inquiries": {"precision": 0.80, "recall": 0.80, "f1": 0.80},
-      "human_resources": {"precision": 0.75, "recall": 0.75, "f1": 0.75},
-      "security_compliance": {"precision": 0.76, "recall": 0.76, "f1": 0.76}
+      "billing_finance": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666
+      },
+      "technical_support": {
+        "precision": 0.8571428571428571,
+        "recall": 1.0,
+        "f1": 0.923076923076923
+      },
+      "sales_inquiries": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "human_resources": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "security_compliance": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
     }
   },
   "llama3.1:latest": {
     "model_name": "llama3.1:latest",
     "total_emails": 50,
-    "accuracy": 0.96,
-    "macro_f1": 0.96,
-    "mean_latency_ms": 1410.0,
-    "p50_latency_ms": 1410.0,
-    "p90_latency_ms": 2500.0,
-    "p99_latency_ms": 2850.0,
-    "throughput_emails_per_sec": 0.71,
-    "ece_calibration": 0.041,
+    "accuracy": 0.94,
+    "macro_f1": 0.9722943722943722,
+    "mean_latency_ms": 2031.9224100000608,
+    "p50_latency_ms": 1823.8808000000972,
+    "p90_latency_ms": 2276.121150000017,
+    "p99_latency_ms": 7916.455139999853,
+    "throughput_emails_per_sec": 0.49214477633521947,
+    "ece_calibration": 0.039999999999999925,
     "dept_metrics": {
-      "billing_finance": {"precision": 1.00, "recall": 1.00, "f1": 1.00},
-      "technical_support": {"precision": 0.95, "recall": 0.95, "f1": 0.95},
-      "sales_inquiries": {"precision": 0.95, "recall": 0.95, "f1": 0.95},
-      "human_resources": {"precision": 0.95, "recall": 0.95, "f1": 0.95},
-      "security_compliance": {"precision": 0.95, "recall": 0.95, "f1": 0.95}
+      "billing_finance": {
+        "precision": 0.9090909090909091,
+        "recall": 1.0,
+        "f1": 0.9523809523809523
+      },
+      "technical_support": {
+        "precision": 0.8333333333333334,
+        "recall": 1.0,
+        "f1": 0.9090909090909091
+      },
+      "sales_inquiries": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "human_resources": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "security_compliance": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
     }
   },
   "llama3.2:1b": {
     "model_name": "llama3.2:1b",
     "total_emails": 50,
-    "accuracy": 0.52,
-    "macro_f1": 0.495,
-    "mean_latency_ms": 1020.0,
-    "p50_latency_ms": 1020.0,
-    "p90_latency_ms": 1800.0,
-    "p99_latency_ms": 2100.0,
-    "throughput_emails_per_sec": 0.98,
-    "ece_calibration": 0.385,
+    "accuracy": 0.32,
+    "macro_f1": 0.274074074074074,
+    "mean_latency_ms": 5110.1300539998565,
+    "p50_latency_ms": 1377.1527999997488,
+    "p90_latency_ms": 10222.072529999332,
+    "p99_latency_ms": 58205.57292199981,
+    "throughput_emails_per_sec": 0.19568973576656218,
+    "ece_calibration": 0.6139999999999998,
     "dept_metrics": {
-      "billing_finance": {"precision": 0.55, "recall": 0.55, "f1": 0.55},
-      "technical_support": {"precision": 0.50, "recall": 0.50, "f1": 0.50},
-      "sales_inquiries": {"precision": 0.45, "recall": 0.45, "f1": 0.45},
-      "human_resources": {"precision": 0.50, "recall": 0.50, "f1": 0.50},
-      "security_compliance": {"precision": 0.48, "recall": 0.48, "f1": 0.48}
+      "billing_finance": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "technical_support": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "sales_inquiries": {
+        "precision": 0.22727272727272727,
+        "recall": 1.0,
+        "f1": 0.37037037037037035
+      },
+      "human_resources": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "security_compliance": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
     }
   }
 }
