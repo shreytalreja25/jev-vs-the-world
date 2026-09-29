@@ -174,10 +174,10 @@ def build_email_exp_pdf():
     story.append(HRFlowable(width="100%", thickness=0.5, color=colors.black, spaceAfter=6))
     
     # Abstract
-    abs_text = "<b><i>Abstract</i>: Automating the routing of customer and enterprise emails to specific operational departments is a foundational requirement for high-throughput service desks. Traditional generative LLMs perform email classification by parsing multi-line JSON completions auto-regressively, introducing processing latency and throughput bottlenecks on local hardware. In this paper, we conduct an empirical evaluation comparing local open-source Large Language Models (Llama 3.1 8B, Llama 3.2 1B via Ollama), an open-weight decision encoder (Laya), and a System-One decision model (Jev) on a 50-item enterprise email dataset categorized into 5 operational departments: billing_finance, technical_support, sales_inquiries, human_resources, and security_compliance. Evaluating strictly on non-cost performance metrics, including Classification Accuracy, Macro F1, P50/P99 Latency, Processing Throughput (emails/sec), and Expected Calibration Error (ECE), we demonstrate that Llama 3.1 8B achieves the highest overall accuracy (96.0%, Macro F1: 96.0%), while Jev and Laya offer 10x to 25x higher throughput (10.3 to 17.2 emails/sec vs. 0.71 emails/sec) with sub-100ms P50 latency.</b>"
+    abs_text = "<b><i>Abstract</i>: Automating the routing of customer and enterprise emails to specific operational departments is a foundational requirement for high-throughput service desks. Traditional generative LLMs perform email classification by parsing multi-line JSON completions auto-regressively, introducing processing latency and throughput bottlenecks on local hardware. In this paper, we conduct an empirical evaluation comparing local open-source Large Language Models (Qwen 3.5 9B Abliterated, Llama 3.1 8B, Llama 3.2 1B via Ollama), an open-weight decision encoder (Laya), and a System-One decision model (Jev) on a 50-item enterprise email dataset categorized into 5 operational departments: billing_finance, technical_support, sales_inquiries, human_resources, and security_compliance. Evaluating strictly on non-cost performance metrics, including Classification Accuracy, Macro F1, P50/P99 Latency, Processing Throughput (emails/sec), and Expected Calibration Error (ECE), we demonstrate that Qwen 3.5 9B Abliterated achieves the highest Macro F1 (98.2%) and lowest calibration error (ECE 0.0372) tying top accuracy at 96.0%, while Jev and Laya offer 100x to 160x higher throughput (10.1 to 16.8 emails/sec vs. 0.10 emails/sec) with sub-100ms P50 latency.</b>"
     story.append(Paragraph(abs_text, abstract_style))
     
-    key_text = "<b><i>Index Terms</i>: Email Classification, Department Routing, Llama 3.1, Jev Model, Laya Encoder, Ollama Benchmarking, Latency.</b>"
+    key_text = "<b><i>Index Terms</i>: Email Classification, Department Routing, Qwen 3.5 9B, Llama 3.1, Jev Model, Laya Encoder, Ollama Benchmarking, Latency.</b>"
     story.append(Paragraph(key_text, keywords_style))
     story.append(HRFlowable(width="100%", thickness=0.5, color=colors.black, spaceAfter=6))
     
@@ -226,8 +226,8 @@ def build_email_exp_pdf():
         story.append(Paragraph("Fig. 1. 5-Department Email Classification Accuracy & Macro F1.", caption_style))
 
     story.append(Paragraph("III. ANALYTICAL FINDINGS", sec_h1_style))
-    story.append(Paragraph("• <b>Accuracy Champion</b>: Llama 3.1 8B achieved 96.0% accuracy on local laptop execution, correctly identifying complex domain nuances between billing and sales inquiries.", body_style))
-    story.append(Paragraph("• <b>Speed Champion</b>: Laya (17.24 emails/sec) and Jev (10.31 emails/sec) operated 14x to 24x faster than Ollama LLM generation.", body_style))
+    story.append(Paragraph("• <b>F1 & Calibration Champion</b>: Qwen 3.5 9B Abliterated achieved the highest Macro F1 (98.2%) and lowest ECE (0.0372), with flawless 100% F1 scores across 4 of 5 departments.", body_style))
+    story.append(Paragraph("• <b>Speed Champion</b>: Laya (16.75 emails/sec) and Jev (10.08 emails/sec) operated 100x to 160x faster than the heavier local LLM generation.", body_style))
 
     story.append(NextPageTemplate('LaterPages'))
     story.append(FrameBreak())
@@ -239,7 +239,7 @@ def build_email_exp_pdf():
         story.append(Paragraph("Fig. 2. P50 Latency vs Throughput (Emails processed per second).", caption_style))
 
     story.append(Paragraph("IV. CONCLUSION", sec_h1_style))
-    story.append(Paragraph("For maximum accuracy on complex email triage, Llama 3.1 8B is the superior local open-source choice. For high-volume service desks requiring > 10 emails/sec, Jev and Laya decision models provide optimal throughput.", body_style))
+    story.append(Paragraph("For maximum accuracy and calibrated certainty in complex email triage, Qwen 3.5 9B and Llama 3.1 8B offer superior classification fidelity. For high-volume service desks requiring > 10 emails/sec, Jev and Laya decision models provide optimal throughput.", body_style))
 
     story.append(Spacer(1, 10))
     story.append(Paragraph("REFERENCES", sec_h1_style))
