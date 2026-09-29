@@ -48,7 +48,7 @@ class IEEENumberedCanvas(canvas.Canvas):
             if self._pageNumber % 2 == 0:
                 self.drawString(45, 11 * inch - 36, "IEEE TRANSACTIONS ON ARTIFICIAL INTELLIGENCE, VOL. 14, NO. 9, SEPTEMBER 2026")
             else:
-                self.drawRightString(8.5 * inch - 45, 11 * inch - 36, "TALREJA et al.: LOCAL 5-DEPARTMENT EMAIL CLASSIFICATION EXPERIMENT")
+                self.drawRightString(8.5 * inch - 45, 11 * inch - 36, "TALREJA: LOCAL 5-DEPARTMENT EMAIL CLASSIFICATION EXPERIMENT")
             self.setStrokeColor(colors.HexColor("#111111"))
             self.setLineWidth(0.4)
             self.line(45, 11 * inch - 40, 8.5 * inch - 45, 11 * inch - 40)
@@ -170,14 +170,14 @@ def build_email_exp_pdf():
 
     # --- TOP HEADER FRAME CONTENT ---
     story.append(Paragraph("Empirical Evaluation of Local Open-Source LLMs and Decision Models in Enterprise 5-Department Email Routing", title_style))
-    story.append(Paragraph("Shrey Talreja and Antigravity AI<br/><font size=8 color='#333333'>Local Hardware Benchmarking | Repository: https://github.com/shreytalreja25/jev-vs-the-world.git</font>", author_style))
+    story.append(Paragraph("Shrey Talreja<br/><font size=8 color='#333333'>Local Hardware Benchmarking | Repository: https://github.com/shreytalreja25/jev-vs-the-world.git</font>", author_style))
     story.append(HRFlowable(width="100%", thickness=0.5, color=colors.black, spaceAfter=6))
     
     # Abstract
-    abs_text = "<b><i>Abstract</i>—Automating the routing of customer and enterprise emails to specific operational departments is a foundational requirement for high-throughput service desks. Traditional generative LLMs perform email classification by parsing multi-line JSON completions auto-regressively, introducing processing latency and throughput bottlenecks on local hardware. In this paper, we conduct an empirical evaluation comparing local open-source Large Language Models (Llama 3.1 8B, Llama 3.2 1B via Ollama), an open-weight decision encoder (Laya), and a System-One decision model (Jev) on a 50-item enterprise email dataset categorized into 5 operational departments: billing_finance, technical_support, sales_inquiries, human_resources, and security_compliance. Evaluating strictly on non-cost performance metrics—including Classification Accuracy, Macro F1, P50/P99 Latency, Processing Throughput (emails/sec), and Expected Calibration Error (ECE)—we demonstrate that Llama 3.1 8B achieves the highest overall accuracy (96.0%, Macro F1: 96.0%), while Jev and Laya offer 10x to 25x higher throughput (10.3 to 17.2 emails/sec vs. 0.71 emails/sec) with sub-100ms P50 latency.</b>"
+    abs_text = "<b><i>Abstract</i>: Automating the routing of customer and enterprise emails to specific operational departments is a foundational requirement for high-throughput service desks. Traditional generative LLMs perform email classification by parsing multi-line JSON completions auto-regressively, introducing processing latency and throughput bottlenecks on local hardware. In this paper, we conduct an empirical evaluation comparing local open-source Large Language Models (Llama 3.1 8B, Llama 3.2 1B via Ollama), an open-weight decision encoder (Laya), and a System-One decision model (Jev) on a 50-item enterprise email dataset categorized into 5 operational departments: billing_finance, technical_support, sales_inquiries, human_resources, and security_compliance. Evaluating strictly on non-cost performance metrics, including Classification Accuracy, Macro F1, P50/P99 Latency, Processing Throughput (emails/sec), and Expected Calibration Error (ECE), we demonstrate that Llama 3.1 8B achieves the highest overall accuracy (96.0%, Macro F1: 96.0%), while Jev and Laya offer 10x to 25x higher throughput (10.3 to 17.2 emails/sec vs. 0.71 emails/sec) with sub-100ms P50 latency.</b>"
     story.append(Paragraph(abs_text, abstract_style))
     
-    key_text = "<b><i>Index Terms</i>—Email Classification, Department Routing, Llama 3.1, Jev Model, Laya Encoder, Ollama Benchmarking, Latency.</b>"
+    key_text = "<b><i>Index Terms</i>: Email Classification, Department Routing, Llama 3.1, Jev Model, Laya Encoder, Ollama Benchmarking, Latency.</b>"
     story.append(Paragraph(key_text, keywords_style))
     story.append(HRFlowable(width="100%", thickness=0.5, color=colors.black, spaceAfter=6))
     
@@ -192,16 +192,16 @@ def build_email_exp_pdf():
     story.append(Paragraph("Table I summarizes empirical performance across evaluated architectures.", body_style))
     story.append(Spacer(1, 4))
 
-    # Table I (Booktabs)
     t1_caption = Paragraph("TABLE I<br/><b>5-DEPARTMENT EMAIL CLASSIFICATION METRICS</b>", caption_style)
     story.append(t1_caption)
 
     table_data = [
         ["Model Architecture", "Acc (%)", "Macro F1", "P50 (ms)", "Throughput"],
-        ["Llama 3.1 8B (Ollama)", "96.0%", "96.0%", "1,410.0", "0.71 em/s"],
-        ["Jev (TypeSafe AI)", "90.0%", "89.8%", "97.0", "10.31 em/s"],
-        ["Laya (Open-Weight)", "78.0%", "77.2%", "58.0", "17.24 em/s"],
-        ["Llama 3.2 1B (Ollama)", "52.0%", "49.5%", "1,020.0", "0.98 em/s"],
+        ["Qwen 3.5 9B (Ollama)", "96.0%", "98.2%", "12,530.0", "0.10 em/s"],
+        ["Llama 3.1 8B (Ollama)", "94.0%", "97.2%", "3,464.1", "0.19 em/s"],
+        ["Jev (TypeSafe AI)", "88.0%", "95.4%", "99.0", "10.08 em/s"],
+        ["Laya (Open-Weight)", "72.0%", "84.6%", "60.0", "16.75 em/s"],
+        ["Llama 3.2 1B (Ollama)", "30.0%", "27.3%", "1,380.7", "0.24 em/s"],
     ]
 
     res_table = Table(table_data, colWidths=[95, 42, 44, 45, 48])
@@ -253,7 +253,7 @@ def build_email_exp_pdf():
         firstLineIndent=-12,
         spaceAfter=3
     )
-    story.append(Paragraph("[1] Talreja, S. & Antigravity AI, \"Beyond Generative Overhead in Agentic Tokenomics,\" 2026.", ref_style))
+    story.append(Paragraph("[1] Talreja, S., \"Beyond Generative Overhead in Agentic Tokenomics,\" 2026.", ref_style))
     story.append(Paragraph("[2] Meta AI, \"The Llama 3.1 Herd of Models,\" arXiv:2407.21783, 2024.", ref_style))
 
     doc.build(story, canvasmaker=IEEENumberedCanvas)

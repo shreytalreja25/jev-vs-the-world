@@ -48,7 +48,7 @@ class IEEENumberedCanvas(canvas.Canvas):
             if self._pageNumber % 2 == 0:
                 self.drawString(45, 11 * inch - 36, "IEEE TRANSACTIONS ON ARTIFICIAL INTELLIGENCE, VOL. 14, NO. 9, SEPTEMBER 2026")
             else:
-                self.drawRightString(8.5 * inch - 45, 11 * inch - 36, "TALREJA et al.: HOSTED API VS. OPEN-WEIGHT ENCODER MODELS (JEV VS. LAYA)")
+                self.drawRightString(8.5 * inch - 45, 11 * inch - 36, "TALREJA: HOSTED API VS. OPEN-WEIGHT ENCODER MODELS (JEV VS. LAYA)")
             self.setStrokeColor(colors.HexColor("#111111"))
             self.setLineWidth(0.4)
             self.line(45, 11 * inch - 40, 8.5 * inch - 45, 11 * inch - 40)
@@ -144,19 +144,6 @@ def build_ieee_laya_pdf():
         keepWithNext=True
     )
 
-    sec_h2_style = ParagraphStyle(
-        'IEEESecH2',
-        parent=styles['Normal'],
-        fontName='Times-Italic',
-        fontSize=9.5,
-        leading=12,
-        alignment=0,
-        textColor=colors.black,
-        spaceBefore=6,
-        spaceAfter=3,
-        keepWithNext=True
-    )
-
     body_style = ParagraphStyle(
         'IEEEBody',
         parent=styles['Normal'],
@@ -183,14 +170,14 @@ def build_ieee_laya_pdf():
 
     # --- TOP HEADER FRAME CONTENT ---
     story.append(Paragraph("Hosted API vs. Open-Weight Encoder Models: An Empirical Evaluation of Jev and Laya in Enterprise Decision Architectures", title_style))
-    story.append(Paragraph("Shrey Talreja and Antigravity AI<br/><font size=8 color='#333333'>Ref: Hugging Face Community Guide (September 24, 2026) | Repository: https://github.com/shreytalreja25/jev-vs-the-world.git</font>", author_style))
+    story.append(Paragraph("Shrey Talreja<br/><font size=8 color='#333333'>Ref: Hugging Face Community Guide (September 24, 2026) | Repository: https://github.com/shreytalreja25/jev-vs-the-world.git</font>", author_style))
     story.append(HRFlowable(width="100%", thickness=0.5, color=colors.black, spaceAfter=6))
     
     # Abstract
-    abs_text = "<b><i>Abstract</i>—As machine-native decision layers replace auto-regressive text parsing in enterprise AI workflows, software engineers face a fundamental architectural choice: deploying managed System-One decision APIs such as Jev (TypeSafe AI) or self-hosting open-weight encoder models such as Laya (Apache-2.0). In this paper, we conduct an empirical evaluation comparing Jev and Laya across decision accuracy, confidence calibration, context window scaling, latency under varying hardware configurations, and total operational cost (TCO). Referencing the JevBench v1.3.0 benchmark dataset (534 decision cases), Jev achieves a composite score of 74.4 (#1 ranking) compared to Laya's 54.4 (#33 ranking), with a pronounced gap on complex decision logic (74.1% vs 34.1% hard-case accuracy). However, Laya offers crucial operational advantages, including zero data residency leakage, offline air-gapped deployment capability, task-specific fine-tuning on proprietary labels, and sub-50ms inference on local GPU hardware (Tesla T4). We formalize an Operating Boundary Decision Matrix to guide engineering teams on selecting between hosted APIs and open-weight encoder decision architectures.</b>"
+    abs_text = "<b><i>Abstract</i>: As machine-native decision layers replace auto-regressive text parsing in enterprise AI workflows, software engineers face a fundamental architectural choice: deploying managed System-One decision APIs such as Jev (TypeSafe AI) or self-hosting open-weight encoder models such as Laya (Apache-2.0). In this paper, we conduct an empirical evaluation comparing Jev and Laya across decision accuracy, confidence calibration, context window scaling, latency under varying hardware configurations, and total operational cost (TCO). Referencing the JevBench v1.3.0 benchmark dataset (534 decision cases), Jev achieves a composite score of 74.4 (#1 ranking) compared to Laya's 54.4 (#33 ranking), with a pronounced gap on complex decision logic (74.1% vs 34.1% hard-case accuracy). However, Laya offers crucial operational advantages, including zero data residency leakage, offline air-gapped deployment capability, task-specific fine-tuning on proprietary labels, and sub-50ms inference on local GPU hardware (Tesla T4). We formalize an Operating Boundary Decision Matrix to guide engineering teams on selecting between hosted APIs and open-weight encoder decision architectures.</b>"
     story.append(Paragraph(abs_text, abstract_style))
     
-    key_text = "<b><i>Index Terms</i>—Jev Model, Laya AI, System-One Decision API, Open-Weight Encoder, JevBench v1.3.0, Data Residency.</b>"
+    key_text = "<b><i>Index Terms</i>: Jev Model, Laya AI, System-One Decision API, Open-Weight Encoder, JevBench v1.3.0, Data Residency.</b>"
     story.append(Paragraph(key_text, keywords_style))
     story.append(HRFlowable(width="100%", thickness=0.5, color=colors.black, spaceAfter=6))
     
@@ -199,13 +186,12 @@ def build_ieee_laya_pdf():
     # --- PAGE 1 COL 1 ---
     story.append(Paragraph("I. INTRODUCTION & OPERATING BOUNDARIES", sec_h1_style))
     story.append(Paragraph("Modern autonomous software systems rely heavily on typed decision microservices for intent classification, safety guardrail enforcement, dynamic ticket routing, and policy scoring. Rather than invoking general-purpose Large Language Models (LLMs) to generate natural language or JSON payloads, developers are adopting specialized decision models.", body_style))
-    story.append(Paragraph("Two primary paradigms have emerged in 2026: (1) Jev (TypeSafe AI)—a managed zero-shot API supporting 64k token contexts and 255 choice options without GPU overhead; and (2) Laya (Apache-2.0)—an open-weight encoder model supporting on-premise execution, task-specific fine-tuning, and strict data residency compliance.", body_style))
+    story.append(Paragraph("Two primary paradigms have emerged in 2026: (1) Jev (TypeSafe AI), a managed zero-shot API supporting 64k token contexts and 255 choice options without GPU overhead; and (2) Laya (Apache-2.0), an open-weight encoder model supporting on-premise execution, task-specific fine-tuning, and strict data residency compliance.", body_style))
 
     story.append(Paragraph("II. JEVBENCH V1.3.0 EMPIRICAL FINDINGS", sec_h1_style))
     story.append(Paragraph("The JevBench v1.3.0 benchmark suite evaluates 52 system configurations across 534 typed decisions divided into easy (72), standard (96), judge-style (146), and hard (220) decision cases.", body_style))
     story.append(Spacer(1, 4))
 
-    # Table I (Booktabs format)
     t1_caption = Paragraph("TABLE I<br/><b>JEVBENCH V1.3.0 BENCHMARK METRICS COMPARISON</b>", caption_style)
     story.append(t1_caption)
 
@@ -245,7 +231,6 @@ def build_ieee_laya_pdf():
     story.append(Paragraph("To assist software engineering teams in selecting between hosted APIs and open-weight encoder decision architectures, Table II defines the operational boundary matrix.", body_style))
     story.append(Spacer(1, 4))
 
-    # Table II (Booktabs format)
     t2_caption = Paragraph("TABLE II<br/><b>OPERATIONAL DECISION BOUNDARY MATRIX</b>", caption_style)
     story.append(t2_caption)
 
@@ -292,7 +277,7 @@ def build_ieee_laya_pdf():
     story.append(Paragraph("[1] Hugging Face Community, \"Jev vs Laya: Hosted API or Open Weights? (2026 Guide),\" September 24, 2026.", ref_style))
     story.append(Paragraph("[2] TypeSafe AI, \"Jev System-One Decision API Specification & JevBench v1.3.0 Results,\" September 2026.", ref_style))
     story.append(Paragraph("[3] Laya Project, \"Open-Weight Encoder Decision Architecture (Apache-2.0),\" 2026.", ref_style))
-    story.append(Paragraph("[4] Talreja, S. & Antigravity AI, \"Beyond Generative Overhead in Agentic Tokenomics,\" 2026.", ref_style))
+    story.append(Paragraph("[4] Talreja, S., \"Beyond Generative Overhead in Agentic Tokenomics,\" 2026.", ref_style))
 
     doc.build(story, canvasmaker=IEEENumberedCanvas)
     print(f"[+] Successfully built IEEE Laya PDF at: {pdf_filename}")

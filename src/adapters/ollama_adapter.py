@@ -34,7 +34,7 @@ class OllamaAdapter(BaseModelAdapter):
                     {"role": "user", "content": prompt}
                 ],
                 format="json",
-                options={"temperature": 0.0}
+                options={"temperature": 0.0, "num_ctx": 2048, "num_predict": 250}
             )
             elapsed_ms = (time.perf_counter() - start_time) * 1000.0
             

@@ -48,7 +48,7 @@ class IEEENumberedCanvas(canvas.Canvas):
             if self._pageNumber % 2 == 0:
                 self.drawString(45, 11 * inch - 36, "IEEE TRANSACTIONS ON ARTIFICIAL INTELLIGENCE, VOL. 14, NO. 9, SEPTEMBER 2026")
             else:
-                self.drawRightString(8.5 * inch - 45, 11 * inch - 36, "TALREJA et al.: LOCAL 4-STAGE AGENTIC SECURITY PIPELINE EXPERIMENT")
+                self.drawRightString(8.5 * inch - 45, 11 * inch - 36, "TALREJA: LOCAL 4-STAGE AGENTIC SECURITY PIPELINE EXPERIMENT")
             self.setStrokeColor(colors.HexColor("#111111"))
             self.setLineWidth(0.4)
             self.line(45, 11 * inch - 40, 8.5 * inch - 45, 11 * inch - 40)
@@ -170,14 +170,14 @@ def build_agentic_exp_pdf():
 
     # --- TOP HEADER FRAME CONTENT ---
     story.append(Paragraph("Autonomous Code Vulnerability Triage, Threat Analysis, and Patch Remediation via Local Multi-Stage Agentic Pipelines", title_style))
-    story.append(Paragraph("Shrey Talreja and Antigravity AI<br/><font size=8 color='#333333'>Local Hardware Benchmarking | Repository: https://github.com/shreytalreja25/jev-vs-the-world.git</font>", author_style))
+    story.append(Paragraph("Shrey Talreja<br/><font size=8 color='#333333'>Local Hardware Benchmarking | Repository: https://github.com/shreytalreja25/jev-vs-the-world.git</font>", author_style))
     story.append(HRFlowable(width="100%", thickness=0.5, color=colors.black, spaceAfter=6))
     
     # Abstract
-    abs_text = "<b><i>Abstract</i>—Multi-step recursive agentic workflows—where autonomous agents observe state, invoke specialized tool steps, generate code refactoring patches, and verify policy compliance—are rapidly replacing single-turn LLM prompts in software security engineering. In this paper, we construct and empirically evaluate a 4-Stage Autonomous Security Remediation Agentic Pipeline executing entirely on a developer laptop. The pipeline integrates fast System-One decision routers (Jev and Laya) for Stage 1 (Triage) and Stage 4 (Verification) with local open-source Large Language Models (Llama 3.1 8B and Llama 3.2 1B via Ollama) for Stage 2 (Deep Threat Analysis) and Stage 3 (Patch Remediation Generation). Evaluating across 25 actual code security vulnerabilities, the hybrid Llama 3.1 8B + Jev Router configuration achieves a 92.0% Triage Accuracy and an 88.0% Policy Verification Pass Rate with a median end-to-end pipeline latency of 1,264.0 ms.</b>"
+    abs_text = "<b><i>Abstract</i>: Multi-step recursive agentic workflows, where autonomous agents observe state, invoke specialized tool steps, generate code refactoring patches, and verify policy compliance, are rapidly replacing single-turn LLM prompts in software security engineering. In this paper, we construct and empirically evaluate a 4-Stage Autonomous Security Remediation Agentic Pipeline executing entirely on a developer laptop. The pipeline integrates fast System-One decision routers (Jev and Laya) for Stage 1 (Triage) and Stage 4 (Verification) with local open-source Large Language Models (Llama 3.1 8B and Llama 3.2 1B via Ollama) for Stage 2 (Deep Threat Analysis) and Stage 3 (Patch Remediation Generation). Evaluating across 25 actual code security vulnerabilities, the hybrid Llama 3.1 8B + Jev Router configuration achieves a 92.0% Triage Accuracy and an 88.0% Policy Verification Pass Rate with a median end-to-end pipeline latency of 1,264.0 ms.</b>"
     story.append(Paragraph(abs_text, abstract_style))
     
-    key_text = "<b><i>Index Terms</i>—Agentic Pipeline, Vulnerability Remediation, Llama 3.1, Jev Model, Code Refactoring, Security Verification.</b>"
+    key_text = "<b><i>Index Terms</i>: Agentic Pipeline, Vulnerability Remediation, Llama 3.1, Jev Model, Code Refactoring, Security Verification.</b>"
     story.append(Paragraph(key_text, keywords_style))
     story.append(HRFlowable(width="100%", thickness=0.5, color=colors.black, spaceAfter=6))
     
@@ -191,7 +191,6 @@ def build_agentic_exp_pdf():
     story.append(Paragraph("Table I summarizes pipeline execution metrics across configurations.", body_style))
     story.append(Spacer(1, 4))
 
-    # Table I (Booktabs)
     t1_caption = Paragraph("TABLE I<br/><b>4-STAGE AGENTIC PIPELINE PERFORMANCE METRICS</b>", caption_style)
     story.append(t1_caption)
 
@@ -226,7 +225,7 @@ def build_agentic_exp_pdf():
 
     story.append(Paragraph("III. KEY ANALYTICAL FINDINGS", sec_h1_style))
     story.append(Paragraph("• <b>Remediation Quality</b>: Llama 3.1 8B generated valid refactoring patches passing automated policy verification in 88.0% of cases.", body_style))
-    story.append(Paragraph("• <b>Router Efficiency</b>: Using specialized decision models for Stage 1 and Stage 4 avoided auto-regressive decoding overhead, reducing stage latency from ~500ms to 58ms–97ms.", body_style))
+    story.append(Paragraph("• <b>Router Efficiency</b>: Using specialized decision models for Stage 1 and Stage 4 avoided auto-regressive decoding overhead, reducing stage latency from ~500ms to 58ms to 97ms.", body_style))
 
     story.append(NextPageTemplate('LaterPages'))
     story.append(FrameBreak())
@@ -252,7 +251,7 @@ def build_agentic_exp_pdf():
         firstLineIndent=-12,
         spaceAfter=3
     )
-    story.append(Paragraph("[1] Talreja, S. & Antigravity AI, \"Beyond Generative Overhead in Agentic Tokenomics,\" 2026.", ref_style))
+    story.append(Paragraph("[1] Talreja, S., \"Beyond Generative Overhead in Agentic Tokenomics,\" 2026.", ref_style))
     story.append(Paragraph("[2] OWASP Foundation, \"OWASP Top 10 Web Application Security Risks,\" 2024–2026.", ref_style))
 
     doc.build(story, canvasmaker=IEEENumberedCanvas)

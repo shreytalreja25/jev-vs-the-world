@@ -23,33 +23,19 @@ An empirical benchmark suite and quad research paper collection comparing **Jev 
 
 ---
 
-## 🛡️ 4-Stage Agentic Security Audit & Remediation Pipeline
-
-An end-to-end multi-step agentic pipeline executing locally on developer hardware across 25 actual code vulnerabilities:
-* **Stage 1**: Fast System-One Vulnerability Triage Router (Jev / Laya)
-* **Stage 2**: Deep Threat Vector Analysis Agent (Llama 3.1 8B via Ollama)
-* **Stage 3**: Secure Code Patch Generation Agent (Llama 3.1 8B & Llama 3.2 1B via Ollama)
-* **Stage 4**: Security Policy Verification Router (Jev / Laya)
-
-| Agentic Pipeline Configuration | Stage 1 Triage Acc (%) | Stage 4 Verify Pass (%) | S1 Router Lat | S2 Threat Lat | S3 Patch Lat | S4 Verify Lat | P50 Pipeline Latency | Throughput |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Llama 3.1 8B + Jev Router** | **92.0%** | **88.0%** | 97.0 ms | 420.0 ms | 650.0 ms | 97.0 ms | 1,264.0 ms | 0.79 p/s |
-| **Llama 3.1 8B + Laya Router** | 80.0% | 76.0% | **58.0 ms** | 420.0 ms | 650.0 ms | **58.0 ms** | 1,186.0 ms | 0.84 p/s |
-| **Llama 3.2 1B + Jev Router** | **92.0%** | 60.0% | 97.0 ms | **210.0 ms** | **320.0 ms** | 97.0 ms | 724.0 ms | 1.38 p/s |
-| **Llama 3.2 1B + Laya Router** | 80.0% | 52.0% | **58.0 ms** | **210.0 ms** | **320.0 ms** | **58.0 ms** | **646.0 ms** | **1.55 p/s** |
-
----
-
 ## 🛠️ Execution & Reproduction
 
 ```bash
+# Run local 5-department email classification experiment
+python experiments/email_department_classification.py
+
 # Run local 4-stage agentic security pipeline
 python experiments/agentic_vulnerability_pipeline.py
 
-# Generate agentic pipeline figures
-python analysis/visualize_agentic_pipeline.py
-
-# Recompile IEEE PDF report
+# Recompile IEEE PDF reports
+python paper/generate_pdf.py
+python paper/generate_laya_pdf.py
+python paper/generate_email_pdf.py
 python paper/generate_agentic_pdf.py
 ```
 
@@ -58,9 +44,16 @@ python paper/generate_agentic_pdf.py
 ## 📜 Citations
 
 ```bibtex
+@article{talreja2026main,
+  title={Beyond Generative Overhead: Evaluating System-One Decision Models vs. Frontier LLMs and Open-Weight Encoders},
+  author={Talreja, Shrey},
+  journal={GitHub Repository: shreytalreja25/jev-vs-the-world},
+  year={2026}
+}
+
 @article{talreja2026agentic_pipeline,
   title={Autonomous Code Vulnerability Triage, Threat Analysis, and Patch Remediation via Local Multi-Stage Agentic Pipelines},
-  author={Talreja, Shrey and Antigravity AI},
+  author={Talreja, Shrey},
   journal={GitHub Repository: shreytalreja25/jev-vs-the-world},
   year={2026}
 }

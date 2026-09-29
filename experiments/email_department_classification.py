@@ -68,9 +68,12 @@ async def evaluate_model_on_emails(model_name: str, items: list[BenchmarkItem]) 
     outputs = []
     print(f"[*] Executing Email Classification for Model: {model_name} ({len(items)} emails)...")
     
-    for item in items:
+    for i, item in enumerate(items):
         out = await adapter.predict_decision(item)
         outputs.append(out)
+        if (i + 1) % 10 == 0 or (i + 1) == len(items):
+            correct_cnt = sum(1 for o in outputs if o.is_correct)
+            print(f"    -> [{model_name}] {i + 1}/{len(items)} completed | Running Accuracy: {correct_cnt}/{i + 1} ({correct_cnt / (i + 1) * 100:.1f}%)")
         
     return outputs
 
@@ -132,7 +135,7 @@ def compute_email_experiment_metrics(all_results: dict[str, list[DecisionOutput]
 
 def main():
     items = load_email_dataset()
-    models_to_test = ["jev", "laya", "llama3.1:latest", "llama3.2:1b"]
+    models_to_test = ["jev", "laya", "llama3.1:latest", "llama3.2:1b", "lukey03/qwen3.5-9b-abliterated"]
     
     print("\n========================================================")
     print("  LOCAL 5-DEPARTMENT EMAIL CLASSIFICATION EXPERIMENT")
@@ -140,15 +143,28 @@ def main():
     print(f"  Total Emails: {len(items)}")
     print("========================================================\n")
     
+    raw_output_path = os.path.join(PROJECT_ROOT, "data", "email_classification_results.json")
+    existing_summary = {}
+    if os.path.exists(raw_output_path):
+        try:
+            with open(raw_output_path, "r", encoding="utf-8") as f:
+                existing_summary = json.load(f)
+        except Exception:
+            existing_summary = {}
+
     all_results = {}
     for model_name in models_to_test:
+        if model_name in existing_summary and "--force" not in sys.argv and model_name != "lukey03/qwen3.5-9b-abliterated":
+            print(f"[*] Using existing cached benchmark metrics for: {model_name}")
+            continue
         results = asyncio.run(evaluate_model_on_emails(model_name, items))
         all_results[model_name] = results
         
-    metrics_summary = compute_email_experiment_metrics(all_results)
+    new_metrics = compute_email_experiment_metrics(all_results)
+    existing_summary.update(new_metrics)
+    metrics_summary = existing_summary
     
-    # Save raw outputs to JSON
-    raw_output_path = os.path.join(PROJECT_ROOT, "data", "email_classification_results.json")
+    # Save combined outputs to JSON
     with open(raw_output_path, "w", encoding="utf-8") as f:
         json.dump(metrics_summary, f, indent=2)
         

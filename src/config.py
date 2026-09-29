@@ -82,6 +82,16 @@ MODEL_REGISTRY: Dict[str, ModelInfo] = {
         max_context_tokens=128000,
         notes="Ultra-compact open-source 1B LLM running via Ollama.",
     ),
+    "lukey03/qwen3.5-9b-abliterated": ModelInfo(
+        name="Qwen 3.5 9B Abliterated (Local Ollama)",
+        provider="ollama",
+        model_id="lukey03/qwen3.5-9b-abliterated",
+        input_cost_per_1m=0.00,
+        output_cost_per_1m=0.00,
+        is_system_one=False,
+        max_context_tokens=65536,
+        notes="Abliterated open-weights multimodal/text 9B model running via Ollama.",
+    ),
     "mock-fast": ModelInfo(
         name="Mock Fast System-One",
         provider="mock",
