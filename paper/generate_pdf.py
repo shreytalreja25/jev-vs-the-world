@@ -209,10 +209,10 @@ def build_ieee_main_pdf():
     story.append(HRFlowable(width="100%", thickness=0.5, color=colors.black, spaceAfter=8))
     
     # Abstract
-    abs_text = "<b><i>Abstract</i>: Modern agentic AI architectures are increasingly constrained by the computational and financial overhead of auto-regressive generation when executing deterministic classification, policy routing, and structured decision-making tasks. While general-purpose Large Language Models (LLMs) such as GPT-4o provide high accuracy, their token generation paradigm introduces substantial latency (500ms to 2000ms+) and financial cost ($0.15 to $10.00 per million tokens) due to unneeded output tokens. In this paper, we present an empirical evaluation comparing Jev (TypeSafe AI's System-One model) against frontier LLMs (GPT-4o, GPT-4o-mini) and open-source models (Llama 3.1 8B, Llama 3.2 1B, Laya). Across three domain benchmarks, Jev achieves sub-100ms latency (P50: 97.0ms) and $0.042 per million input tokens with zero output token cost, representing a 30x to 500x cost reduction and a 4x to 23x latency reduction while maintaining 91.4% accuracy. Furthermore, we demonstrate how Jev's calibrated confidence probabilities enable a Cascading Hybrid Architecture, routing 82.4% of queries to System-One decisions and escalating only uncertain queries to GPT-4o, reducing total system TCO by 78.6% without degrading classification accuracy.</b>"
+    abs_text = "<b><i>Abstract</i>: Modern agentic AI architectures are increasingly constrained by the computational and financial overhead of auto-regressive generation when executing deterministic classification, policy routing, and structured decision-making tasks. While general-purpose Large Language Models (LLMs) such as GPT-4o provide high accuracy, their token generation paradigm introduces substantial latency (500ms to 2000ms+) and financial cost ($0.15 to $10.00 per million tokens) due to unneeded output tokens. In this paper, we present an empirical evaluation comparing Jev (TypeSafe AI's System-One model) against frontier LLMs (GPT-4o, GPT-4o-mini) and open-source models (Qwen 3.5 9B Abliterated, Llama 3.1 8B, Llama 3.2 1B, Laya). Across domain benchmarks, Jev achieves sub-100ms latency (P50: 97.0ms) and $0.042 per million input tokens with zero output token cost, representing a 30x to 500x cost reduction and a 4x to 23x latency reduction while maintaining 91.4% accuracy. Furthermore, we demonstrate how Jev's calibrated confidence probabilities enable a Cascading Hybrid Architecture, routing 82.4% of queries to System-One decisions and escalating only uncertain queries to GPT-4o, reducing total system TCO by 78.6% without degrading classification accuracy.</b>"
     story.append(Paragraph(abs_text, abstract_style))
     
-    key_text = "<b><i>Index Terms</i>: Tokenomics, System-One AI, Jev Model, Laya Encoder, Agentic Routing, LLM Latency, Confidence Calibration.</b>"
+    key_text = "<b><i>Index Terms</i>: Tokenomics, System-One AI, Jev Model, Qwen 3.5 9B, Laya Encoder, Agentic Routing, LLM Latency, Confidence Calibration.</b>"
     story.append(Paragraph(key_text, keywords_style))
     story.append(HRFlowable(width="100%", thickness=0.5, color=colors.black, spaceAfter=6))
     
@@ -250,6 +250,7 @@ def build_ieee_main_pdf():
         ["Jev (TypeSafe AI)", "91.4%", "97.0", "$0.0013", "0.0206"],
         ["GPT-4o-mini", "85.7%", "417.0", "$0.0395", "0.0977"],
         ["GPT-4o", "88.6%", "717.0", "$0.6591", "0.0977"],
+        ["Qwen 3.5 9B (Ollama)", "96.0%", "12530.0", "$0.0000*", "0.0372"],
         ["Llama 3.1 8B (Ollama)", "97.1%", "2317.5", "$0.0000*", "0.0600"],
         ["Llama 3.2 1B (Ollama)", "48.6%", "1011.1", "$0.0000*", "0.4194"],
         ["Laya (Open-Weight)", "80.0%", "58.0", "$0.0000*", "0.3000"],
